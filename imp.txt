@@ -1,0 +1,23 @@
+1.Generate package.json
+    npm init -y   //node package module
+2.Create HTTP server
+    a.Install and import express modules
+           npm Install express
+    b.Import express modules
+
+
+
+HTTP Requests types:
+        GET -- read resources
+        POST -- create resources or add 
+        PUT -- update resources
+        DELETE -- delete resources
+
+
+http://127.0.0.1 //this means our localhost
+--> and it has right to access all localports but we need our one http://127.0.0.1:3000
+
+        GET -- http://127.0.0.1:3000/users
+        POST -- http://127.0.0.1:3000/user
+        PUT -- http://127.0.0.1:3000/users/<id>
+        DELETE -- http://127.0.0.1:3000/users/<id>
