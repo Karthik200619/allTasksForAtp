@@ -3,6 +3,7 @@ export const commonRouter =exp.Router()
 import { authenticate } from '../services/authService.js'
 import jwt from 'jsonwebtoken'
 import { UserTypeModel } from '../models/UserModel.js'
+import { hash,compare } from 'bcryptjs'
 
 
 //login
@@ -36,7 +37,23 @@ commonRouter.get('/logout',(req,res)=>{
 commonRouter.put('/change-password',async(req,res)=>{
     //get current password and new password
     let {email,currentPassword,newPassword}=req.body
+    //check if user present or not
+    let userObj=await UserTypeModel.findOne({email:email})
+    if(!userObj){
+        return res.status(401).json({message:"User not found"})
+    }
     //check current password is correct or not
-    UserTypeModel.findOne({email:email})
-    jwt.verify(currentPassword,)
+    let isMatched=await compare(currentPassword,userObj.password)
+    if(!isMatched){
+        return res.status(401).json({message:"old Password is InValid"})
+    }
+    //if matched 
+    let newHashedPassword=await hash(newPassword,10);
+
+    //set newpassword to database
+    await UserTypeModel.findByIdAndUpdate(userObj._id,{$set:{password:newHashedPassword}})
+    //return response
+    res.status(200).json({message:"password changed successfully"})
+
+
 })
