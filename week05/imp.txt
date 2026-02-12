@@ -1,0 +1,12 @@
+1.Genrate package.json
+
+
+
+
+
+
+
+a.Install mongoose and connect to mongodb server
+b.Create schema of resource
+c.create model of that schema
+d.perform db operations on that model
