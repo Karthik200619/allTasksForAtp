@@ -20,7 +20,7 @@ export const register = async (userObj)=>{
     return newUserObj;
 }
 
-export const authenticate= async({email ,password})=>{
+export const authenticate= async({email,password})=>{
     //check email and role does exists
     const user=await UserTypeModel.findOne({email});
     if(!user){
@@ -30,7 +30,7 @@ export const authenticate= async({email ,password})=>{
     }
     //compare the password
     //to compare passwords 
-    let isMatch=bcrypt.compare(password,user.password)
+    let isMatch=await bcrypt.compare(password,user.password)
     if(!isMatch){
         const err=new Error("Invalid password");
         err.status=401;
