@@ -1,0 +1,109 @@
+POST http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+  "firstName":"Karthik",
+  "lastName":"Varma",
+  "email":"23eg112e53@gmail.com",
+  "password":"karthik@123"
+}
+###
+POST http://localhost:4000/auth+or-api/users
+Content-Type: application/json
+
+{
+  "firstName":"shiva",
+  "lastName":"kumar",
+  "email":"23eg112e50@gmail.com",
+  "password":"karthik@123"
+}
+
+###login
+POST http://localhost:4000/common-api/login
+Content-Type: application/json
+
+{
+  "email":"23eg112e50@gmail.com",
+  "password":"Shiva@123"
+}
+
+
+
+
+###
+POST http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+  "author":"698974571cfefb76342a7731",
+  "title":"Java India",
+  "category":"Java",
+  "content":"Hey bro Java how are you I am fine here I am doing good I am also happy"
+
+}
+
+###GET the articles
+GET http://localhost:4000/author-api/articles/698974571cfefb76342a7731
+
+
+###Update the Article
+
+PUT http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+  "author":"698974571cfefb76342a7731",
+  "articleId":"6989750100609efb88ec7e04",
+  "title":"Java Bro",
+  "category":"Java",
+  "content":"Hey bro Java how are you I am fine here I am doing good I am also happy"
+
+}
+
+###Delete article
+DELETE http://localhost:4000/author-api/articles/698974571cfefb76342a7731/6989750100609efb88ec7e04
+
+
+###logout
+
+GET http://localhost:4000/common-api/logout
+
+###
+GET http://localhost:4000/user-api/articles/698969a53a0d8983958d8e60
+
+
+###
+
+GET http://localhost:4000/test
+
+
+###
+POST http://localhost:4000/admin-api/block/698969a53a0d8983958d8e60
+
+###
+
+PUT http://localhost:4000/common-api/change-password
+Content-Type: application/json
+
+{
+  "email":"23eg112e53@gmail.com",
+  "currentPassword":"karthik@1",
+  "newPassword":"karthik@123"
+}
+
+###
+POST http://localhost:4000/common-api/login
+Content-Type: application/json
+
+{
+  "email":"23eg112e53@gmail.com",
+  "password":"karthik@123"
+}
+
+###
+PUT http://localhost:4000/user-api/articles/6989750100609efb88ec7e04/comments/users/698969a53a0d8983958d8e60
+Content-Type: application/json
+
+{
+  "commentTxt":"hey nice article"
+}

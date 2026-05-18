@@ -1,0 +1,27 @@
+POST http://localhost:4000/product-api/products
+Content-Type: application/json
+
+{
+    "productName":"watch",
+    "price":55000,
+    "brand":"samsung"
+}
+
+###
+POST http://localhost:4000/user-api/users
+Content-Type: application/json  
+
+{
+    "name":"pavan",
+    "email":"pk3188331@gmail.com",
+    "password":"pavan",
+    "cart":[]
+}
+
+###
+
+PUT http://localhost:4000/user-api/user-cart/user-id/6981accf6b27617d4a2278e9/product-id/698068b538a3a1009ad878cc
+
+
+###
+GET http://localhost:4000/user-api/users/69817e16d230b587f3a35286
